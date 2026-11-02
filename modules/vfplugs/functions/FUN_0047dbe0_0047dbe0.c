@@ -1,0 +1,99 @@
+/* Module: vfplugs.dll
+   Function: FUN_0047dbe0
+   Address: 0047dbe0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+int FUN_0047dbe0(int param_1)
+
+{
+  int iVar1;
+  HMODULE hModule;
+  int iVar2;
+  undefined4 *puVar3;
+  int local_38;
+  HLOCAL local_34;
+  undefined4 local_30;
+  HLOCAL local_2c;
+  undefined1 local_28;
+  undefined1 local_27;
+  undefined1 local_26;
+  undefined1 local_25;
+  undefined1 local_24;
+  undefined1 local_23;
+  undefined4 auStack_20 [5];
+  undefined4 uStack_c;
+  undefined4 uStack_8;
+  int iStack_4;
+  
+  iVar2 = 0;
+  local_30 = 0;
+  local_34 = (HLOCAL)0x0;
+  local_2c = (HLOCAL)0x0;
+  local_38 = 0;
+  local_28 = 0;
+  local_27 = 0;
+  local_26 = 0;
+  local_25 = 0;
+  local_24 = 0;
+  local_23 = 1;
+  if (param_1 == 0) {
+    return 0x57;
+  }
+  iVar1 = FUN_0047da00();
+  if (iVar1 == 0) {
+    return 0;
+  }
+  hModule = GetModuleHandleA("advapi32.dll");
+  if (hModule == (HMODULE)0x0) {
+    return -0x7fffbffb;
+  }
+  if (DAT_0053b23c == 0) {
+    DAT_0053b240 = GetProcAddress(hModule,"SetSecurityInfo");
+    DAT_0053b244 = GetProcAddress(hModule,"GetSecurityInfo");
+    DAT_0053b248 = GetProcAddress(hModule,"AllocateAndInitializeSid");
+    DAT_0053b24c = GetProcAddress(hModule,"FreeSid");
+    DAT_0053b250 = GetProcAddress(hModule,"SetEntriesInAclA");
+    DAT_0053b23c = 1;
+  }
+  if ((((DAT_0053b240 != (FARPROC)0x0) && (DAT_0053b244 != (FARPROC)0x0)) &&
+      (DAT_0053b248 != (FARPROC)0x0)) &&
+     ((DAT_0053b250 != (FARPROC)0x0 && (DAT_0053b24c != (FARPROC)0x0)))) {
+    iVar2 = (*DAT_0053b244)(param_1,4,4,0,0,&local_30,0,&local_2c);
+    if (iVar2 == 0) {
+      iVar2 = (*DAT_0053b248)(&local_28,1,0,0,0,0,0,0,0,0,&local_38);
+      if (iVar2 == 0) {
+        iVar2 = -0x7fffbffb;
+      }
+      else {
+        puVar3 = auStack_20;
+        for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
+          *puVar3 = 0;
+          puVar3 = puVar3 + 1;
+        }
+        iStack_4 = local_38;
+        auStack_20[0] = 0xf003f;
+        auStack_20[1] = 2;
+        auStack_20[2] = 3;
+        uStack_c = 0;
+        uStack_8 = 5;
+        iVar2 = (*DAT_0053b250)(1,auStack_20,local_30,&local_34);
+        if (iVar2 == 0) {
+          iVar2 = (*DAT_0053b240)(param_1,4,4,0,0,local_34,0);
+        }
+      }
+    }
+  }
+  if (local_2c != (HLOCAL)0x0) {
+    LocalFree(local_2c);
+  }
+  if ((local_38 != 0) && (DAT_0053b24c != (FARPROC)0x0)) {
+    (*DAT_0053b24c)(local_38);
+  }
+  if (local_34 != (HLOCAL)0x0) {
+    LocalFree(local_34);
+  }
+  return iVar2;
+}
+
+

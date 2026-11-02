@@ -1,0 +1,23 @@
+/* Module: sfxpfx1.dll
+   Function: FUN_5c986800
+   Address: 5c986800
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+undefined4 FUN_5c986800(uint param_1,undefined4 *param_2)
+
+{
+  LSTATUS LVar1;
+  HKEY local_108;
+  CHAR local_104 [260];
+  
+  FUN_5c986000(param_1,0xf7c0ef08,local_104,0x104);
+  LVar1 = RegOpenKeyExA((HKEY)0x80000000,local_104,0,0x2001f,&local_108);
+  if (LVar1 == 0) {
+    *param_2 = local_108;
+    return 0;
+  }
+  return 0x80070005;
+}
+
+

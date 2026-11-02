@@ -1,0 +1,35 @@
+/* Module: pngu3266.dll
+   Function: SetButtonImage
+   Address: 605fd8fb
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+/* public: virtual int __thiscall CPNImageButton::SetButtonImage(unsigned long) */
+
+int __thiscall CPNImageButton::SetButtonImage(CPNImageButton *this,ulong param_1)
+
+{
+  CPNBitmapImage *this_00;
+  int *piVar1;
+  
+                    /* 0xd8fb  1848  ?SetButtonImage@CPNImageButton@@UAEHK@Z */
+  if (*(undefined4 **)(this + 0x107) != (undefined4 *)0x0) {
+    (**(code **)**(undefined4 **)(this + 0x107))(1);
+    *(undefined4 *)(this + 0x107) = 0;
+  }
+  this_00 = operator_new(0x33);
+  if (this_00 == (CPNBitmapImage *)0x0) {
+    piVar1 = (int *)0x0;
+  }
+  else {
+    piVar1 = (int *)CPNBitmapImage::CPNBitmapImage(this_00);
+  }
+  *(int **)(this + 0x107) = piVar1;
+  if (piVar1 != (int *)0x0) {
+    (**(code **)(*piVar1 + 0x24))(param_1);
+    UpdateImages(this);
+  }
+  return (uint)(piVar1 != (int *)0x0);
+}
+
+

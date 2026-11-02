@@ -1,0 +1,54 @@
+/* Module: vfplugs.dll
+   Function: FUN_00472750
+   Address: 00472750
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void FUN_00472750(HWND param_1,HDC param_2)
+
+{
+  LONG LVar1;
+  HDC hdc;
+  HBITMAP h;
+  HGDIOBJ h_00;
+  tagRECT local_50;
+  tagPAINTSTRUCT local_40;
+  
+  LVar1 = GetWindowLongA(param_1,0);
+  if (param_2 == (HDC)0x0) {
+    param_2 = BeginPaint(*(HWND *)(LVar1 + 0x2c0),&local_40);
+  }
+  else {
+    local_40.hdc = (HDC)0x0;
+    local_40.fErase = 1;
+  }
+  GetClientRect(*(HWND *)(LVar1 + 0x2c0),&local_50);
+  GetWindowLongA(*(HWND *)(LVar1 + 0x2c0),-0x10);
+  hdc = CreateCompatibleDC(param_2);
+  h = CreateCompatibleBitmap(param_2,local_50.right,local_50.bottom);
+  if ((hdc == (HDC)0x0) || (h == (HBITMAP)0x0)) {
+    if (param_2 != (HDC)0x0) {
+      FUN_00471940(LVar1,param_2);
+      FUN_00472700(LVar1,param_2);
+    }
+  }
+  else {
+    h_00 = SelectObject(hdc,h);
+    FUN_00471940(LVar1,hdc);
+    FUN_00472700(LVar1,hdc);
+    BitBlt(param_2,0,0,local_50.right,local_50.bottom,hdc,0,0,0xcc0020);
+    SelectObject(hdc,h_00);
+  }
+  if (h != (HBITMAP)0x0) {
+    DeleteObject(h);
+  }
+  if (hdc != (HDC)0x0) {
+    DeleteDC(hdc);
+  }
+  if (local_40.hdc != (HDC)0x0) {
+    EndPaint(*(HWND *)(LVar1 + 0x2c0),&local_40);
+  }
+  return;
+}
+
+

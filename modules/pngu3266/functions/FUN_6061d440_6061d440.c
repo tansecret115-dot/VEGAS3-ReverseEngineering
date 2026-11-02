@@ -1,0 +1,48 @@
+/* Module: pngu3266.dll
+   Function: FUN_6061d440
+   Address: 6061d440
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+undefined4 __thiscall FUN_6061d440(void *this,char *param_1,ushort param_2,uint param_3,int param_4)
+
+{
+  ushort uVar1;
+  int iVar2;
+  uint _OpenFlag;
+  
+  if (-1 < *(int *)((int)this + 8)) {
+    _close(*(int *)((int)this + 8));
+  }
+  *(undefined4 *)((int)this + 4) = 0;
+  if ((param_2 & 0x200) != 0) {
+    if (param_4 == 0) {
+      uVar1 = param_2 | 0x8000;
+    }
+    else {
+      uVar1 = param_2 | 0x4000;
+    }
+    iVar2 = _sopen(param_1,(uint)uVar1,0x10,0x180);
+    *(int *)((int)this + 8) = iVar2;
+    if (iVar2 < 0) {
+      *(undefined4 *)((int)this + 4) = 0x80040008;
+      return 0x80040008;
+    }
+    _close(iVar2);
+  }
+  if (param_4 == 0) {
+    _OpenFlag = param_2 | 0x8000;
+  }
+  else {
+    _OpenFlag = param_2 | 0x4000;
+  }
+  iVar2 = _sopen(param_1,_OpenFlag,param_3 & 0xffff,0x180);
+  *(int *)((int)this + 8) = iVar2;
+  if (iVar2 < 0) {
+    *(undefined4 *)((int)this + 4) = 0x80040008;
+    return 0x80040008;
+  }
+  return 0;
+}
+
+

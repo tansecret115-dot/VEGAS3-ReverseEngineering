@@ -1,0 +1,20 @@
+/* Module: rmme3260.dll
+   Function: FUN_6621c7f0
+   Address: 6621c7f0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void __thiscall FUN_6621c7f0(void *this,int param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = 0;
+  do {
+    *(undefined1 *)(iVar1 + param_1) = *(undefined1 *)(iVar1 + 0x45 + (int)this);
+    iVar1 = iVar1 + 1;
+  } while (iVar1 < 5);
+  return;
+}
+
+

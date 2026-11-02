@@ -1,0 +1,52 @@
+/* Module: sfpublish.dll
+   Function: FUN_0040a9b0
+   Address: 0040a9b0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+int FUN_0040a9b0(undefined4 *param_1)
+
+{
+  int *piVar1;
+  LPCVOID pMem;
+  HGLOBAL pvVar2;
+  int iVar3;
+  int *piVar4;
+  
+  iVar3 = param_1[6] + -1;
+  param_1[6] = iVar3;
+  if ((iVar3 == 0) && (param_1 != (undefined4 *)0x0)) {
+    *param_1 = &PTR_FUN_00435d24;
+    param_1[6] = 1;
+    InterlockedDecrement(&DAT_0044176c);
+    if ((*(byte *)(param_1 + 5) & 2) != 0) {
+      piVar4 = (int *)param_1[2];
+      if (piVar4 != (int *)param_1[3]) {
+        do {
+          piVar1 = (int *)*piVar4;
+          if (piVar1 != (int *)0x0) {
+            (**(code **)(*piVar1 + 8))(piVar1);
+          }
+          piVar4 = piVar4 + 1;
+        } while (piVar4 != (int *)param_1[3]);
+      }
+      pMem = (LPCVOID)param_1[2];
+      pvVar2 = GlobalHandle(pMem);
+      GlobalUnlock(pvVar2);
+      pvVar2 = GlobalHandle(pMem);
+      GlobalFree(pvVar2);
+    }
+    piVar4 = (int *)param_1[1];
+    if (piVar4 != (int *)0x0) {
+      (**(code **)(*piVar4 + 8))(piVar4);
+    }
+    pvVar2 = GlobalHandle(param_1);
+    GlobalUnlock(pvVar2);
+    pvVar2 = GlobalHandle(param_1);
+    GlobalFree(pvVar2);
+    return 0;
+  }
+  return iVar3;
+}
+
+

@@ -1,0 +1,37 @@
+/* Module: rv203260.dll
+   Function: FUN_638af910
+   Address: 638af910
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+int * __thiscall FUN_638af910(void *this,int *param_1)
+
+{
+  undefined4 *puVar1;
+  undefined4 *puVar2;
+  int iVar3;
+  LONG *lpAddend;
+  
+  if (*(int *)this == 0) {
+    FUN_638af620(this);
+  }
+  puVar1 = *(undefined4 **)this;
+  puVar2 = (undefined4 *)*param_1;
+  if (puVar1 != puVar2) {
+    if ((((int)puVar1[-3] < 0) && (puVar1 + -3 != (undefined4 *)PTR_DAT_638b5450)) ||
+       ((int)puVar2[-3] < 0)) {
+      FUN_638af8d0(this,puVar2[-2],puVar2);
+      return this;
+    }
+    FUN_638af660(this);
+    iVar3 = *param_1;
+    *(int *)this = iVar3;
+    lpAddend = (LONG *)(iVar3 + -0xc);
+    if (*lpAddend != -2000000000) {
+      InterlockedIncrement(lpAddend);
+    }
+  }
+  return this;
+}
+
+

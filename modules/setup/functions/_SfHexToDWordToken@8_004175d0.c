@@ -1,0 +1,55 @@
+/* Module: Setup.exe
+   Function: _SfHexToDWordToken@8
+   Address: 004175d0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+int _SfHexToDWordToken_8(LPCSTR param_1,undefined4 *param_2)
+
+{
+  char cVar1;
+  int iVar2;
+  LPCSTR lpsz;
+  
+                    /* 0x175d0  193  _SfHexToDWordToken@8 */
+  iVar2 = _ismbcspace((int)*param_1);
+  while (iVar2 != 0) {
+    param_1 = CharNextA(param_1);
+    iVar2 = _ismbcspace((int)*param_1);
+  }
+  FUN_004321a0();
+  FUN_004321a0();
+  lstrcpynA(&stack0xfffffff0,param_1,3);
+  lstrcpynA(&stack0xfffffff0,"0x",3);
+  iVar2 = lstrcmpiA(&stack0xfffffff0,&stack0xfffffff0);
+  lpsz = param_1 + 2;
+  if (iVar2 != 0) {
+    lpsz = param_1;
+  }
+  param_1 = (LPCSTR)0x0;
+  do {
+    cVar1 = *lpsz;
+    iVar2 = _ismbcdigit((int)cVar1);
+    if (iVar2 == 0) {
+      if ((cVar1 < 'A') || ('F' < cVar1)) {
+        if ((cVar1 < 'a') || ('f' < cVar1)) {
+          if (param_2 != (undefined4 *)0x0) {
+            *param_2 = lpsz;
+          }
+          return (int)param_1;
+        }
+        iVar2 = 0x57;
+      }
+      else {
+        iVar2 = 0x37;
+      }
+    }
+    else {
+      iVar2 = 0x30;
+    }
+    param_1 = (LPCSTR)(((int)param_1 * 0x10 - iVar2) + (int)cVar1);
+    lpsz = CharNextA(lpsz);
+  } while( true );
+}
+
+

@@ -1,0 +1,21 @@
+/* Module: rmme3260.dll
+   Function: FUN_6623ea00
+   Address: 6623ea00
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+float10 FUN_6623ea00(int param_1)
+
+{
+  int iVar1;
+  float10 fVar2;
+  
+  iVar1 = *(int *)(param_1 + 0x4c);
+  if (iVar1 != 0) {
+    fVar2 = (float10)(**(code **)(*(int *)(iVar1 + 0x1c) + 0x24))(iVar1 + 0x1c);
+    return fVar2;
+  }
+  return (float10)*(float *)(param_1 + 0x1c4);
+}
+
+

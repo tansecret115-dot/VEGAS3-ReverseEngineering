@@ -1,0 +1,17 @@
+/* Module: sfpublish.dll
+   Function: FUN_00429440
+   Address: 00429440
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+undefined4 FUN_00429440(int *param_1)
+
+{
+  if ((param_1 != (int *)0x0) && (*param_1 != 0)) {
+    *param_1 = *param_1 + 1;
+    return 0;
+  }
+  return 0x80070057;
+}
+
+

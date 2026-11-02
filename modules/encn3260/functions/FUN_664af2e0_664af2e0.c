@@ -1,0 +1,29 @@
+/* Module: encn3260.dll
+   Function: FUN_664af2e0
+   Address: 664af2e0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void __fastcall FUN_664af2e0(undefined4 *param_1)
+
+{
+  int *piVar1;
+  
+  piVar1 = (int *)param_1[3];
+  *param_1 = &PTR_FUN_664df328;
+  param_1[1] = &PTR_LAB_664df2f0;
+  if (piVar1 != (int *)0x0) {
+    (**(code **)(*piVar1 + 8))(piVar1);
+    param_1[3] = 0;
+  }
+  if (*(undefined4 **)((int)param_1 + 0x933) != (undefined4 *)0x0) {
+    (**(code **)**(undefined4 **)((int)param_1 + 0x933))(1);
+    *(undefined4 *)((int)param_1 + 0x933) = 0;
+  }
+  if ((*(byte *)((int)param_1 + 0x26) & 2) != 0) {
+    FUN_664af4c0((int)param_1);
+  }
+  return;
+}
+
+

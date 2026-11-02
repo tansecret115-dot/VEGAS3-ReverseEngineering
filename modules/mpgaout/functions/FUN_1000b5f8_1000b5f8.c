@@ -1,0 +1,26 @@
+/* Module: mpgaout.dll
+   Function: FUN_1000b5f8
+   Address: 1000b5f8
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void FUN_1000b5f8(void)
+
+{
+  uint in_EAX;
+  undefined4 *puVar1;
+  code *UNRECOVERED_JUMPTABLE;
+  
+  puVar1 = (undefined4 *)&stack0x00000004;
+  for (; 0xfff < in_EAX; in_EAX = in_EAX - 0x1000) {
+    puVar1 = puVar1 + -0x400;
+    *puVar1 = *puVar1;
+  }
+  *(undefined4 *)((int)puVar1 - in_EAX) = *(undefined4 *)((int)puVar1 - in_EAX);
+                    /* WARNING: Could not recover jumptable at 0x1000b623. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
+}
+
+

@@ -1,0 +1,29 @@
+/* Module: mp3plug.dll
+   Function: FUN_5f6e68a0
+   Address: 5f6e68a0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+int __cdecl FUN_5f6e68a0(int param_1,int param_2)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  
+  iVar1 = param_2 + *(int *)(param_1 + 0x38);
+  iVar3 = *(int *)(param_1 + 0x3c);
+  iVar2 = iVar1 - iVar3;
+  *(int *)(param_1 + 0x38) = iVar1;
+  if (iVar2 < 1) {
+    iVar2 = 0;
+  }
+  if (iVar1 < iVar3) {
+    iVar3 = iVar1;
+  }
+  iVar1 = iVar3 - (((uint)(iVar3 >> 2) >> 0x1d) + iVar3 & 0xfffffff8);
+  *(int *)(param_1 + 0x38) = iVar3 - iVar1;
+  return iVar1 + iVar2;
+}
+
+

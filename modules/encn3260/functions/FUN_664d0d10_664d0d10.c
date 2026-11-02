@@ -1,0 +1,16 @@
+/* Module: encn3260.dll
+   Function: FUN_664d0d10
+   Address: 664d0d10
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void FUN_664d0d10(int param_1)
+
+{
+  for (; param_1 != 0; param_1 = *(int *)(param_1 + 8)) {
+    FUN_664d0d10(*(int *)(param_1 + 4));
+  }
+  return;
+}
+
+

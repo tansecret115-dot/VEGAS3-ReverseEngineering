@@ -1,0 +1,26 @@
+/* Module: enlv3260.dll
+   Function: FUN_661d39e0
+   Address: 661d39e0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+int __thiscall FUN_661d39e0(void *this,byte *param_1)
+
+{
+  int iVar1;
+  int *piVar2;
+  int local_10 [3];
+  
+  FUN_661d2b60(local_10);
+  iVar1 = FUN_661d4530((void *)((int)this + 8),param_1,local_10);
+  if (iVar1 == 0) {
+    FUN_661d2c80(local_10);
+    return 0;
+  }
+  piVar2 = FUN_661d4570((void *)((int)this + 8),param_1);
+  iVar1 = *piVar2;
+  FUN_661d2c80(local_10);
+  return iVar1;
+}
+
+

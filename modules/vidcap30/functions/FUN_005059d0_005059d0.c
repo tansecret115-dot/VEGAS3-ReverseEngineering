@@ -1,0 +1,35 @@
+/* Module: vidcap30.exe
+   Function: FUN_005059d0
+   Address: 005059d0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+undefined4 FUN_005059d0(int param_1)
+
+{
+  HDC hdc;
+  HDC pHVar1;
+  HBITMAP pHVar2;
+  
+  if (param_1 == 0) {
+    return 0;
+  }
+  *(undefined4 *)(param_1 + 0x410) = 0;
+  _SfVideo_InitBitmapInfo_28((BITMAPINFO *)(param_1 + 0x3e0),0x1c,0xe,0xe,0,0,0);
+  hdc = GetDC((HWND)0x0);
+  pHVar1 = CreateCompatibleDC(hdc);
+  *(HDC *)(param_1 + 0x3d8) = pHVar1;
+  ReleaseDC((HWND)0x0,hdc);
+  pHVar2 = CreateDIBSection(*(HDC *)(param_1 + 0x3d8),(BITMAPINFO *)(param_1 + 0x3e0),0,
+                            (void **)(param_1 + 0x40c),(HANDLE)0x0,0);
+  *(HBITMAP *)(param_1 + 0x3dc) = pHVar2;
+  if (pHVar2 == (HBITMAP)0x0) {
+    DeleteDC(*(HDC *)(param_1 + 0x3d8));
+    *(undefined4 *)(param_1 + 0x3d8) = 0;
+    *(void **)(param_1 + 0x40c) = (void *)0x0;
+    return 0;
+  }
+  return 1;
+}
+
+

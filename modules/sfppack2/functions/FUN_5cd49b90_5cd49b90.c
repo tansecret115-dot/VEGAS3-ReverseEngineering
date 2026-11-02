@@ -1,0 +1,26 @@
+/* Module: sfppack2.dll
+   Function: FUN_5cd49b90
+   Address: 5cd49b90
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+undefined4 FUN_5cd49b90(void)
+
+{
+  _OSVERSIONINFOA local_94;
+  
+  if (DAT_5cd764b0 == 0) {
+    DAT_5cd764b0 = 1;
+    local_94.dwOSVersionInfoSize = 0x94;
+    GetVersionExA(&local_94);
+    if ((local_94.dwPlatformId == 1) &&
+       ((local_94.dwMajorVersion < 4 ||
+        ((local_94.dwMajorVersion == 4 && (local_94.dwMinorVersion == 0)))))) {
+      DAT_5cd764ac = 1;
+      return 1;
+    }
+  }
+  return DAT_5cd764ac;
+}
+
+

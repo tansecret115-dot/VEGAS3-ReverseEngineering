@@ -1,0 +1,83 @@
+/* Module: rmme3260.dll
+   Function: FUN_66264120
+   Address: 66264120
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+undefined4 __thiscall FUN_66264120(void *this,undefined *param_1)
+
+{
+  int iVar1;
+  void *pvVar2;
+  undefined4 *puVar3;
+  uint uVar4;
+  int iVar5;
+  undefined4 *puVar6;
+  int *piVar7;
+  int local_40 [3];
+  int local_34 [3];
+  undefined4 *local_28 [3];
+  int local_1c [3];
+  void *local_10;
+  void *local_c;
+  int local_8;
+  
+  local_8 = -(uint)(*(int *)((int)this + 0x10) != 0);
+  iVar5 = 0;
+  local_10 = this;
+  if (local_8 != 0) {
+    do {
+      FUN_662500f0(local_28);
+      FUN_662500f0(local_1c);
+      FUN_66269860((void *)((int)this + 8),&local_8,local_28,local_1c);
+      iVar5 = iVar5 + 2 + *(int *)(local_1c[0] + -8) + local_28[0][-2];
+      FUN_66250210(local_1c);
+      FUN_66250210((int *)local_28);
+    } while (local_8 != 0);
+  }
+  if (iVar5 != 0) {
+    local_c = operator_new(iVar5 + 1);
+    if (local_c == (void *)0x0) {
+      return 0x80004005;
+    }
+    local_8 = -(uint)(*(int *)((int)this + 0x10) != 0);
+    iVar5 = 0;
+    if (local_8 != 0) {
+      local_10 = (void *)((int)local_10 + 8);
+      do {
+        pvVar2 = local_c;
+        FUN_662500f0(local_34);
+        FUN_662500f0(local_1c);
+        FUN_66269860(local_10,&local_8,local_34,local_1c);
+        piVar7 = local_1c;
+        puVar3 = FUN_662504f0(local_40,local_34,&DAT_6627cc08);
+        FUN_662504a0(local_28,puVar3,piVar7);
+        FUN_66250210(local_40);
+        iVar1 = local_28[0][-2];
+        puVar3 = local_28[0];
+        puVar6 = (undefined4 *)((int)pvVar2 + iVar5);
+        for (uVar4 = iVar1 + 1U >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+          *puVar6 = *puVar3;
+          puVar3 = puVar3 + 1;
+          puVar6 = puVar6 + 1;
+        }
+        for (uVar4 = iVar1 + 1U & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+          *(undefined1 *)puVar6 = *(undefined1 *)puVar3;
+          puVar3 = (undefined4 *)((int)puVar3 + 1);
+          puVar6 = (undefined4 *)((int)puVar6 + 1);
+        }
+        iVar5 = iVar5 + 1 + local_28[0][-2];
+        FUN_66250210((int *)local_28);
+        FUN_66250210(local_1c);
+        FUN_66250210(local_34);
+      } while (local_8 != 0);
+    }
+    pvVar2 = local_c;
+    *(undefined1 *)(iVar5 + (int)local_c) = 0;
+    (*(code *)param_1)(local_c);
+    operator_delete(pvVar2);
+  }
+  return 0;
+}
+
+

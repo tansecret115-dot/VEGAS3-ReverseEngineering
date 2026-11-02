@@ -1,0 +1,28 @@
+/* Module: sftrans1.dll
+   Function: FUN_004a4fd0
+   Address: 004a4fd0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+undefined4 FUN_004a4fd0(undefined4 *param_1,undefined4 *param_2,uint param_3)
+
+{
+  uint uVar1;
+  
+  if (0x10 < param_3) {
+    param_3 = 0x10;
+  }
+  for (uVar1 = param_3 >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
+    *param_1 = *param_2;
+    param_2 = param_2 + 1;
+    param_1 = param_1 + 1;
+  }
+  for (param_3 = param_3 & 3; param_3 != 0; param_3 = param_3 - 1) {
+    *(undefined1 *)param_1 = *(undefined1 *)param_2;
+    param_2 = (undefined4 *)((int)param_2 + 1);
+    param_1 = (undefined4 *)((int)param_1 + 1);
+  }
+  return 0;
+}
+
+

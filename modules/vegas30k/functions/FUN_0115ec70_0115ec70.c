@@ -1,0 +1,32 @@
+/* Module: vegas30k.dll
+   Function: FUN_0115ec70
+   Address: 0115ec70
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void FUN_0115ec70(int param_1,undefined4 param_2)
+
+{
+  undefined4 *puVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  if (*(int *)(param_1 + 0x51) == 0) {
+    iVar2 = (*(code *)**(undefined4 **)(param_1 + 4))(param_1,0,0x25);
+    *(int *)(param_1 + 0x51) = iVar2;
+    uVar3 = (*(code *)**(undefined4 **)(param_1 + 4))(param_1,0,0x1000);
+    *(undefined4 *)(iVar2 + 0x20) = uVar3;
+  }
+  puVar1 = *(undefined4 **)(param_1 + 0x51);
+  puVar1[2] = &LAB_0115ece0;
+  puVar1[3] = FUN_0115ecf0;
+  puVar1[4] = FUN_0115ed60;
+  puVar1[5] = FUN_0115c190;
+  puVar1[6] = &DAT_0115eda0;
+  puVar1[7] = param_2;
+  puVar1[1] = 0;
+  *puVar1 = 0;
+  return;
+}
+
+

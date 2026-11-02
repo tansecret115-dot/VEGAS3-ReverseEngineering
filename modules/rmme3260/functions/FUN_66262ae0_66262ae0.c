@@ -1,0 +1,50 @@
+/* Module: rmme3260.dll
+   Function: FUN_66262ae0
+   Address: 66262ae0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+undefined4 * __thiscall FUN_66262ae0(void *this,undefined4 param_1)
+
+{
+  undefined4 *puVar1;
+  undefined4 uVar2;
+  void *pvVar3;
+  
+  puVar1 = operator_new(0x14);
+  if (puVar1 == (undefined4 *)0x0) {
+    uVar2 = 0;
+  }
+  else {
+    uVar2 = FUN_662509f0(puVar1);
+  }
+  *(undefined4 *)((int)this + 0xc) = uVar2;
+  pvVar3 = operator_new(0x1c);
+  if (pvVar3 == (void *)0x0) {
+    uVar2 = 0;
+  }
+  else {
+    uVar2 = FUN_66252680(pvVar3,10);
+  }
+  *(undefined4 *)((int)this + 4) = uVar2;
+  pvVar3 = operator_new(0x1c);
+  if (pvVar3 == (void *)0x0) {
+    uVar2 = 0;
+  }
+  else {
+    uVar2 = FUN_66252680(pvVar3,10);
+  }
+  *(undefined4 *)((int)this + 8) = uVar2;
+  puVar1 = operator_new(4);
+  if (puVar1 != (undefined4 *)0x0) {
+    uVar2 = FUN_66206ea0(puVar1);
+    *(undefined4 *)this = uVar2;
+    *(undefined4 *)((int)this + 0x10) = param_1;
+    return this;
+  }
+  *(undefined4 *)this = 0;
+  *(undefined4 *)((int)this + 0x10) = param_1;
+  return this;
+}
+
+

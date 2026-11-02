@@ -1,0 +1,26 @@
+/* Module: pngu3266.dll
+   Function: operator!=
+   Address: 605f13ec
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+/* public: int __thiscall CPNxRect::operator!=(class CPNxRect const &)const  */
+
+int __thiscall CPNxRect::operator!=(CPNxRect *this,CPNxRect *param_1)
+
+{
+  bool bVar1;
+  
+                    /* 0x13ec  575  ??9CPNxRect@@QBEHABV0@@Z */
+  if ((((*(int *)this == *(int *)param_1) && (*(int *)(this + 4) == *(int *)(param_1 + 4))) &&
+      (*(int *)(this + 8) == *(int *)(param_1 + 8))) &&
+     (*(int *)(this + 0xc) == *(int *)(param_1 + 0xc))) {
+    bVar1 = true;
+  }
+  else {
+    bVar1 = false;
+  }
+  return (uint)!bVar1;
+}
+
+

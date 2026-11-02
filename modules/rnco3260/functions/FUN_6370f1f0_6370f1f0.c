@@ -1,0 +1,107 @@
+/* Module: rnco3260.dll
+   Function: FUN_6370f1f0
+   Address: 6370f1f0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void __cdecl
+FUN_6370f1f0(ushort *param_1,short *param_2,ushort *param_3,int param_4,uint *param_5,uint *param_6)
+
+{
+  uint *puVar1;
+  int iVar2;
+  ushort uVar3;
+  uint uVar4;
+  ushort uVar5;
+  short sVar7;
+  int iVar8;
+  ushort *local_8;
+  uint uVar6;
+  
+  puVar1 = param_6;
+  local_8 = param_1;
+  param_1 = (ushort *)(param_4 >> 1);
+  iVar2 = (param_4 * 2 - (int)param_1) / ((int)param_6 * 2);
+  if (param_4 != 0) {
+    uVar4 = *param_5;
+    uVar4 = (uVar4 & 0xf800 | uVar4 >> 0xd & 0x7c0) >> 6 | (uVar4 & 0xf8) << 7;
+    param_6 = param_5 + 1;
+    param_5 = (uint *)(param_4 - iVar2);
+    if (param_5 != (uint *)0x0) {
+      do {
+        uVar3 = (ushort)uVar4;
+        sVar7 = ((ushort)((*local_8 ^ uVar4) >> 1) & 0x3def) + (*local_8 & uVar3);
+        do {
+          *param_3 = uVar3;
+          *param_2 = sVar7;
+          local_8 = local_8 + 1;
+          param_3 = param_3 + 1;
+          param_2 = param_2 + 1;
+          param_5 = (uint *)((int)param_5 + -1);
+          if (param_5 == (uint *)0x0) goto joined_r0x6370f43f;
+          param_1 = param_1 + -(int)puVar1;
+        } while (-1 < (int)param_1);
+        param_1 = (ushort *)((int)param_1 + param_4);
+        uVar6 = *param_6;
+        uVar6 = (uVar6 & 0xf800 | uVar6 >> 0xd & 0x7c0) >> 6 | (uVar6 & 0xf8) << 7;
+        uVar5 = (ushort)uVar6;
+        uVar4 = ((uVar6 ^ uVar4) >> 1 & 0x3def) + (uVar6 & uVar4);
+        uVar3 = (ushort)uVar4;
+        sVar7 = ((ushort)((*local_8 ^ uVar4) >> 1) & 0x3def) + (*local_8 & uVar3);
+        do {
+          *param_3 = uVar3;
+          local_8 = local_8 + 1;
+          *param_2 = sVar7;
+          param_3 = param_3 + 1;
+          param_2 = param_2 + 1;
+          param_5 = (uint *)((int)param_5 + -1);
+          if (param_5 == (uint *)0x0) goto joined_r0x6370f43f;
+          param_1 = param_1 + -(int)puVar1;
+        } while (-1 < (int)param_1);
+        iVar8 = (int)param_1 + param_4;
+        sVar7 = ((ushort)((*local_8 ^ uVar6) >> 1) & 0x3def) + (*local_8 & uVar5);
+        do {
+          *param_3 = uVar5;
+          local_8 = local_8 + 1;
+          param_3 = param_3 + 1;
+          *param_2 = sVar7;
+          param_2 = param_2 + 1;
+          param_5 = (uint *)((int)param_5 + -1);
+          uVar3 = uVar5;
+          if (param_5 == (uint *)0x0) goto joined_r0x6370f43f;
+          iVar8 = iVar8 + (int)puVar1 * -2;
+        } while (-1 < iVar8);
+        param_1 = (ushort *)(iVar8 + param_4);
+        uVar4 = param_6[1];
+        uVar4 = (uVar4 & 0xf800 | uVar4 >> 0xd & 0x7c0) >> 6 | (uVar4 & 0xf8) << 7;
+        param_6 = param_6 + 2;
+        uVar6 = (uVar6 & uVar4) + ((uVar6 ^ uVar4) >> 1 & 0x3def);
+        uVar3 = (ushort)uVar6;
+        sVar7 = ((ushort)((*local_8 ^ uVar6) >> 1) & 0x3def) + (*local_8 & uVar3);
+        do {
+          local_8 = local_8 + 1;
+          *param_3 = uVar3;
+          param_3 = param_3 + 1;
+          *param_2 = sVar7;
+          param_2 = param_2 + 1;
+          param_5 = (uint *)((int)param_5 + -1);
+          if (param_5 == (uint *)0x0) goto joined_r0x6370f43f;
+          param_1 = param_1 + -(int)puVar1;
+        } while (-1 < (int)param_1);
+        param_1 = (ushort *)((int)param_1 + param_4);
+      } while( true );
+    }
+    sVar7 = (short)param_4;
+    uVar3 = (ushort)uVar4;
+joined_r0x6370f43f:
+    for (; iVar2 != 0; iVar2 = iVar2 + -1) {
+      *param_3 = uVar3;
+      *param_2 = sVar7;
+      param_3 = param_3 + 1;
+      param_2 = param_2 + 1;
+    }
+  }
+  return;
+}
+
+

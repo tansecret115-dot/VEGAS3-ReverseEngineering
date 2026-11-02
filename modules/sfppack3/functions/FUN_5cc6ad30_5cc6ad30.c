@@ -1,0 +1,26 @@
+/* Module: sfppack3.dll
+   Function: FUN_5cc6ad30
+   Address: 5cc6ad30
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+int FUN_5cc6ad30(uint *param_1)
+
+{
+  undefined8 uVar1;
+  int iVar2;
+  uint uVar3;
+  
+  uVar1 = rdtsc();
+  iVar2 = (uint)uVar1 - *param_1;
+  uVar3 = ((int)((ulonglong)uVar1 >> 0x20) - param_1[1]) - (uint)((uint)uVar1 < *param_1);
+  if (DAT_5cc979c8 != 0) {
+    if (DAT_5cc979c8 <= uVar3) {
+      uVar3 = uVar3 % DAT_5cc979c8;
+    }
+    iVar2 = (int)(CONCAT44(uVar3,iVar2) / (ulonglong)DAT_5cc979c8);
+  }
+  return iVar2;
+}
+
+

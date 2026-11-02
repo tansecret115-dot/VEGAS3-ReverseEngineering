@@ -1,0 +1,19 @@
+/* Module: sfppack3.dll
+   Function: FUN_5cc7777d
+   Address: 5cc7777d
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+int FUN_5cc7777d(short *param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = 0;
+  for (; *param_1 != 0; param_1 = param_1 + 1) {
+    iVar1 = iVar1 + 1;
+  }
+  return iVar1;
+}
+
+

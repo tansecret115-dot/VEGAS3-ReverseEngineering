@@ -1,0 +1,14 @@
+/* Module: rmbe3260.dll
+   Function: FUN_6603c1a0
+   Address: 6603c1a0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void __fastcall FUN_6603c1a0(int param_1)
+
+{
+  InterlockedIncrement((LONG *)(param_1 + 0xc));
+  return;
+}
+
+

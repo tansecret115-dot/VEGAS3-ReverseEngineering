@@ -1,0 +1,142 @@
+/* Module: sftrans1.dll
+   Function: FUN_004aa160
+   Address: 004aa160
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+undefined4 __fastcall FUN_004aa160(int param_1)
+
+{
+  int iVar1;
+  
+  *(undefined4 *)(param_1 + 0x38c) = 0;
+  *(undefined4 *)(param_1 + 0x390) = 3;
+  *(undefined4 *)(param_1 + 0xc) = 1;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3da3d70a;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e19999a;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3eb33333;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0xbecccccd;
+  iVar1 = *(int *)(param_1 + 0x38c) + 1;
+  *(int *)(param_1 + 0x38c) = iVar1;
+  *(undefined4 *)(param_1 + 0xc + iVar1 * 0x1c) = 1;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3dcccccd;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e19999a;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3eb33333;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0xbe4ccccd;
+  iVar1 = *(int *)(param_1 + 0x38c) + 1;
+  *(int *)(param_1 + 0x38c) = iVar1;
+  *(undefined4 *)(param_1 + 0xc + iVar1 * 0x1c) = 0;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3dcccccd;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0x3f000000;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f000000;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f000000;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0;
+  iVar1 = *(int *)(param_1 + 0x38c) + 1;
+  *(int *)(param_1 + 0x38c) = iVar1;
+  *(undefined4 *)(param_1 + 0xc + iVar1 * 0x1c) = 4;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e99999a;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0;
+  iVar1 = *(int *)(param_1 + 0x38c) + 1;
+  *(int *)(param_1 + 0x38c) = iVar1;
+  *(undefined4 *)(param_1 + 0xc + iVar1 * 0x1c) = 5;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3ecccccd;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e4ccccd;
+  iVar1 = *(int *)(param_1 + 0x38c) + 1;
+  *(int *)(param_1 + 0x38c) = iVar1;
+  *(undefined4 *)(param_1 + 0xc + iVar1 * 0x1c) = 1;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e4ccccd;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e19999a;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3eb33333;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e99999a;
+  iVar1 = *(int *)(param_1 + 0x38c) + 1;
+  *(int *)(param_1 + 0x38c) = iVar1;
+  *(undefined4 *)(param_1 + 0xc + iVar1 * 0x1c) = 1;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3db851ec;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3eb33333;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e19999a;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f333333;
+  iVar1 = *(int *)(param_1 + 0x38c) + 1;
+  *(int *)(param_1 + 0x38c) = iVar1;
+  *(undefined4 *)(param_1 + 0xc + iVar1 * 0x1c) = 1;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3d4ccccd;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e19999a;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3eb33333;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f866666;
+  iVar1 = *(int *)(param_1 + 0x38c) + 1;
+  *(int *)(param_1 + 0x38c) = iVar1;
+  *(undefined4 *)(param_1 + 0xc + iVar1 * 0x1c) = 1;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3d8f5c29;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e19999a;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3eb33333;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f9eb852;
+  iVar1 = *(int *)(param_1 + 0x38c) + 1;
+  *(int *)(param_1 + 0x38c) = iVar1;
+  *(undefined4 *)(param_1 + 0xc + iVar1 * 0x1c) = 2;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e051eb8;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e19999a;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3eb33333;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3fa147ae;
+  iVar1 = *(int *)(param_1 + 0x38c) + 1;
+  *(int *)(param_1 + 0x38c) = iVar1;
+  *(undefined4 *)(param_1 + 0xc + iVar1 * 0x1c) = 1;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3d8f5c29;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0x3e947ae1;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e5ddddd;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3dda740d;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3fab851f;
+  iVar1 = *(int *)(param_1 + 0x38c) + 1;
+  *(int *)(param_1 + 0x38c) = iVar1;
+  *(undefined4 *)(param_1 + 0xc + iVar1 * 0x1c) = 1;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e3851ec;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0x3e947ae1;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e5ddddd;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3dda740d;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3fc66666;
+  iVar1 = *(int *)(param_1 + 0x38c) + 1;
+  *(int *)(param_1 + 0x38c) = iVar1;
+  *(undefined4 *)(param_1 + 0xc + iVar1 * 0x1c) = 3;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e0f5c29;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e2e147b;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3d8f5c29;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3ff33333;
+  iVar1 = *(int *)(param_1 + 0x38c) + 1;
+  *(int *)(param_1 + 0x38c) = iVar1;
+  *(undefined4 *)(param_1 + 0xc + iVar1 * 0x1c) = 1;
+  *(undefined4 *)(param_1 + 0x14 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3d8f5c29;
+  *(undefined4 *)(param_1 + (*(int *)(param_1 + 0x38c) + 1) * 0x1c) = 0x3e947ae1;
+  *(undefined4 *)(param_1 + 0x20 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3e5ddddd;
+  *(undefined4 *)(param_1 + 0x24 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3dda740d;
+  *(undefined4 *)(param_1 + 0x10 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x3f800000;
+  *(undefined4 *)(param_1 + 0x18 + *(int *)(param_1 + 0x38c) * 0x1c) = 0x40100000;
+  *(int *)(param_1 + 0x38c) = *(int *)(param_1 + 0x38c) + 1;
+  return 0;
+}
+
+

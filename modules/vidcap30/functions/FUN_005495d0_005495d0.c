@@ -1,0 +1,52 @@
+/* Module: vidcap30.exe
+   Function: FUN_005495d0
+   Address: 005495d0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void FUN_005495d0(int param_1,int param_2,undefined4 *param_3)
+
+{
+  undefined4 *puVar1;
+  byte bVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  undefined4 *puVar6;
+  
+  iVar3 = 0;
+  iVar5 = 0;
+  do {
+    bVar2 = *(byte *)(iVar5 + 0x114 + param_1);
+    iVar5 = iVar5 + 1;
+    if (((bVar2 < 0x29) || (bVar2 != 0x7a && 0x79 < bVar2)) || ((0x5a < bVar2 && (bVar2 < 0x61)))) {
+      *(undefined1 *)(iVar3 + param_2) = 0x5b;
+      *(char *)(iVar3 + 1 + param_2) = "0123456789ABCDEFlibpng error: %s\n"[(int)(uint)bVar2 >> 4];
+      *(char *)(iVar3 + 2 + param_2) = "0123456789ABCDEFlibpng error: %s\n"[bVar2 & 0xf];
+      iVar4 = iVar3 + 3;
+      *(undefined1 *)(iVar4 + param_2) = 0x5d;
+    }
+    else {
+      *(byte *)(iVar3 + param_2) = bVar2;
+      iVar4 = iVar3;
+    }
+    iVar3 = iVar4 + 1;
+  } while (iVar5 < 4);
+  if (param_3 == (undefined4 *)0x0) {
+    *(undefined1 *)(iVar3 + param_2) = 0;
+    return;
+  }
+  *(undefined1 *)(iVar3 + param_2) = 0x3a;
+  *(undefined1 *)(iVar4 + 2 + param_2) = 0x20;
+  puVar1 = (undefined4 *)(iVar4 + 3 + param_2);
+  puVar6 = puVar1;
+  for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *puVar6 = *param_3;
+    param_3 = param_3 + 1;
+    puVar6 = puVar6 + 1;
+  }
+  *(undefined1 *)((int)puVar1 + 0x3f) = 0;
+  return;
+}
+
+

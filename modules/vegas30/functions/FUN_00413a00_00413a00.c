@@ -1,0 +1,58 @@
+/* Module: vegas30.exe
+   Function: FUN_00413a00
+   Address: 00413a00
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+uint FUN_00413a00(int param_1,undefined4 param_2,int param_3,int *param_4)
+
+{
+  uint uVar1;
+  
+  *(int *)(param_1 + 0x24) = *param_4;
+  *(int *)(param_1 + 0x28) = param_4[1];
+  *(int *)(param_1 + 0x2c) = param_4[2] - *param_4;
+  *(int *)(param_1 + 0x30) = param_4[3] - param_4[1];
+  if (param_3 == 0) {
+    if ((*(byte *)(param_1 + 0xc) & 0x50) == 0) {
+      *param_4 = *param_4 + 0xf;
+      param_4[2] = param_4[2] + -4;
+      uVar1 = *(uint *)(param_1 + 0xc);
+      if (((uVar1 & 0x20) != 0) || (((uVar1 & 0x80) != 0 && (((byte)uVar1 & 3) != 3)))) {
+        param_4[1] = param_4[1] + 1;
+        param_4[3] = param_4[3] + -1;
+      }
+    }
+    uVar1 = 0;
+  }
+  else {
+    if ((*(uint *)(param_1 + 0xc) & 0x50) == 0) {
+      *param_4 = *param_4 + 0xf;
+      param_4[2] = param_4[2] + -4;
+      uVar1 = *(uint *)(param_1 + 0xc);
+      if (((uVar1 & 0x20) != 0) || (((uVar1 & 0x80) != 0 && (((byte)uVar1 & 3) != 3)))) {
+        param_4[1] = param_4[1] + 1;
+        param_4[3] = param_4[3] + -1;
+      }
+    }
+    if ((*(byte *)(param_1 + 0xc) & 0x50) == 0) {
+      param_4[4] = param_4[4] + 0xf;
+      param_4[6] = param_4[6] + -4;
+      uVar1 = *(uint *)(param_1 + 0xc);
+      if (((uVar1 & 0x20) != 0) || (((uVar1 & 0x80) != 0 && (((byte)uVar1 & 3) != 3)))) {
+        param_4[5] = param_4[5] + 1;
+        param_4[7] = param_4[7] + -1;
+      }
+    }
+    uVar1 = 0;
+    if ((*(uint *)(param_1 + 0xc) & 0x100) != 0) {
+      uVar1 = 0x100;
+    }
+    if ((*(uint *)(param_1 + 0xc) & 0x200) != 0) {
+      return uVar1 | 0x200;
+    }
+  }
+  return uVar1;
+}
+
+

@@ -1,0 +1,18 @@
+/* Module: sfppack3.dll
+   Function: toupper
+   Address: 5cc84942
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+int __cdecl toupper(int _C)
+
+{
+  int iVar1;
+  
+                    /* WARNING: Could not recover jumptable at 0x5cc84942. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  iVar1 = toupper(_C);
+  return iVar1;
+}
+
+

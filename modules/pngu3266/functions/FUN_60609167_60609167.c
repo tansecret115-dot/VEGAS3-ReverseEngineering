@@ -1,0 +1,14 @@
+/* Module: pngu3266.dll
+   Function: FUN_60609167
+   Address: 60609167
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void FUN_60609167(void)
+
+{
+  CPNFont::CPNFont(&CPNDrawHelper::m_tooltipFont);
+  return;
+}
+
+

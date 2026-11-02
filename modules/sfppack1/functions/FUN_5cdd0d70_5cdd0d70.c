@@ -1,0 +1,46 @@
+/* Module: sfppack1.dll
+   Function: FUN_5cdd0d70
+   Address: 5cdd0d70
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_5cdd0d70(undefined4 *param_1,double param_2,double param_3)
+
+{
+  float10 fVar1;
+  float10 fVar2;
+  float10 fVar3;
+  
+  fVar1 = (float10)param_2;
+  if ((float10)_DAT_5ce14800 <= fVar1) {
+    if ((float10)_DAT_5ce147f8 < fVar1) {
+      fVar1 = (float10)_DAT_5ce147f8;
+    }
+  }
+  else {
+    fVar1 = (float10)_DAT_5ce14800;
+  }
+  fVar2 = (float10)_DAT_5ce147f0;
+  param_1[2] = 0;
+  *param_1 = 0;
+  param_1[3] = 0;
+  param_1[1] = 0;
+  fVar3 = (float10)1.4426950408889634 * ((fVar1 * fVar2) / (float10)param_3);
+  fVar2 = ROUND(fVar3);
+  fVar3 = (float10)f2xm1(fVar3 - fVar2);
+  fVar2 = (float10)fscale((float10)1 + fVar3,fVar2);
+  fVar3 = (float10)fcos(fVar1 * (float10)_DAT_5ce147e8);
+  fVar2 = fVar3 * fVar2 + fVar3 * fVar2;
+  *(double *)(param_1 + 4) = (double)fVar2;
+  fVar3 = (float10)1.4426950408889634 * ((fVar1 * (float10)_DAT_5ce147e0) / (float10)param_3);
+  fVar1 = ROUND(fVar3);
+  fVar3 = (float10)f2xm1(fVar3 - fVar1);
+  fVar1 = (float10)fscale((float10)1 + fVar3,fVar1);
+  *(double *)(param_1 + 6) = (double)fVar1;
+  *(double *)(param_1 + 8) = (double)(((float10)_DAT_5ce12e70 - (float10)(double)fVar2) + fVar1);
+  return;
+}
+
+

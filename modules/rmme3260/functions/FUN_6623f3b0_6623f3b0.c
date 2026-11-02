@@ -1,0 +1,27 @@
+/* Module: rmme3260.dll
+   Function: FUN_6623f3b0
+   Address: 6623f3b0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void __fastcall FUN_6623f3b0(void *param_1)
+
+{
+  int local_14;
+  void *local_10;
+  void *local_c;
+  int local_8;
+  
+  FUN_6623f420(param_1);
+  local_10 = (void *)((int)param_1 + 0x30);
+  local_14 = -(uint)(*(int *)((int)param_1 + 0x3c) != 0);
+  local_c = (void *)0x0;
+  local_8 = 0;
+  while (local_14 != 0) {
+    FUN_66251190(local_10,&local_14,&local_8,(int *)&local_c);
+    FUN_6623f3b0(local_c);
+  }
+  return;
+}
+
+

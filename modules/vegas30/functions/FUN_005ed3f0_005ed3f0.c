@@ -1,0 +1,14 @@
+/* Module: vegas30.exe
+   Function: FUN_005ed3f0
+   Address: 005ed3f0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void FUN_005ed3f0(int param_1)
+
+{
+  FUN_005ed280(param_1 + 0x170);
+  return;
+}
+
+

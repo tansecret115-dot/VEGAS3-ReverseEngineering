@@ -1,0 +1,30 @@
+/* Module: wavplug.dll
+   Function: FUN_5f3bc500
+   Address: 5f3bc500
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+ushort __thiscall FUN_5f3bc500(void *this,LPCSTR param_1)
+
+{
+  int iVar1;
+  ushort uVar2;
+  LPCVOID local_4;
+  
+  uVar2 = *(ushort *)((int)this + 0x7cc);
+  local_4 = (LPCVOID)0x0;
+  iVar1 = FUN_5f3bc150(this,param_1,&local_4);
+  if (iVar1 < 0) {
+    uVar2 = 0;
+  }
+  else {
+    iVar1 = FUN_5f3c4a60((int)local_4);
+    uVar2 = (ushort)iVar1 & uVar2;
+  }
+  if (local_4 != (LPCVOID)0x0) {
+    FUN_5f382130(local_4);
+  }
+  return uVar2;
+}
+
+

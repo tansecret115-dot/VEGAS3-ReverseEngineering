@@ -1,0 +1,16 @@
+/* Module: vidcap30.exe
+   Function: FUN_0056f6c0
+   Address: 0056f6c0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+undefined4 __fastcall FUN_0056f6c0(int *param_1)
+
+{
+  if (*param_1 == 0) {
+    return 0;
+  }
+  return *(undefined4 *)(*param_1 + 4);
+}
+
+

@@ -1,0 +1,57 @@
+/* Module: vidcap30.exe
+   Function: FUN_00509a90
+   Address: 00509a90
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void FUN_00509a90(HWND param_1,HDC param_2)
+
+{
+  undefined4 *puVar1;
+  LONG LVar2;
+  HGDIOBJ h;
+  HBITMAP h_00;
+  HDC hdc;
+  tagRECT local_50;
+  tagPAINTSTRUCT local_40;
+  
+  puVar1 = (undefined4 *)GetWindowLongA(param_1,4);
+  h_00 = (HBITMAP)0x0;
+  if (param_2 == (HDC)0x0) {
+    param_2 = BeginPaint((HWND)*puVar1,&local_40);
+  }
+  else {
+    local_40.hdc = (HDC)0x0;
+    local_40.fErase = 1;
+  }
+  GetClientRect((HWND)*puVar1,&local_50);
+  LVar2 = GetWindowLongA((HWND)*puVar1,-0x10);
+  if ((puVar1[3] == 0) || (puVar1[4] == 0)) {
+    hdc = CreateCompatibleDC(param_2);
+    h_00 = CreateCompatibleBitmap(param_2,local_50.right,local_50.bottom);
+    if ((hdc != (HDC)0x0) && (h_00 != (HBITMAP)0x0)) {
+      h = SelectObject(hdc,h_00);
+      FUN_00509900(puVar1,hdc,&local_50,LVar2);
+      BitBlt(param_2,0,0,local_50.right,local_50.bottom,hdc,0,0,0xcc0020);
+      SelectObject(hdc,h);
+      goto LAB_00509b08;
+    }
+  }
+  else {
+    hdc = (HDC)0x0;
+  }
+  FUN_00509900(puVar1,param_2,&local_50,LVar2);
+LAB_00509b08:
+  if (h_00 != (HBITMAP)0x0) {
+    DeleteObject(h_00);
+  }
+  if (hdc != (HDC)0x0) {
+    DeleteDC(hdc);
+  }
+  if (local_40.hdc != (HDC)0x0) {
+    EndPaint((HWND)*puVar1,&local_40);
+  }
+  return;
+}
+
+

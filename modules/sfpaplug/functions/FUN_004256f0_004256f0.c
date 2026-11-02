@@ -1,0 +1,41 @@
+/* Module: sfpaplug.dll
+   Function: FUN_004256f0
+   Address: 004256f0
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+uint FUN_004256f0(HANDLE param_1,int *param_2,int *param_3)
+
+{
+  HANDLE pvVar1;
+  int *piVar2;
+  int *piVar3;
+  uint uVar4;
+  undefined1 local_4 [4];
+  
+  piVar2 = param_2;
+  pvVar1 = param_1;
+  *param_2 = 0;
+  FUN_00424e20(param_1,(DWORD *)&param_1);
+  piVar3 = param_3;
+  while( true ) {
+    if ((piVar3 != (int *)0x0) && (*piVar3 < 8)) {
+      FUN_00424e40(pvVar1,(LONG)param_1);
+      return 0;
+    }
+    uVar4 = FUN_004252b0(pvVar1,local_4,&param_2);
+    if (piVar3 != (int *)0x0) {
+      *piVar3 = *piVar3 + -8;
+    }
+    if (uVar4 != 0) break;
+    param_2 = (int *)FUN_00424e60(pvVar1,(uint)param_2);
+    if (piVar3 != (int *)0x0) {
+      *piVar3 = *piVar3 - (int)param_2;
+    }
+    *piVar2 = *piVar2 + 1;
+  }
+  FUN_00424e40(pvVar1,(LONG)param_1);
+  return uVar4;
+}
+
+

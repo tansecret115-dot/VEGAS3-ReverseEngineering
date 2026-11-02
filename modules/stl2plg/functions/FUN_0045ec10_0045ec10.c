@@ -1,0 +1,29 @@
+/* Module: stl2plg.dll
+   Function: FUN_0045ec10
+   Address: 0045ec10
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+void FUN_0045ec10(int param_1)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  undefined4 *puVar3;
+  int iVar4;
+  
+  iVar4 = 0;
+  iVar1 = *(int *)(param_1 + 0x8e);
+  if (0 < *(int *)(param_1 + 0x96)) {
+    puVar3 = (undefined4 *)(*(int *)(param_1 + 0x1d1) + 0x41);
+    do {
+      uVar2 = (**(code **)(*(int *)(param_1 + 4) + 4))(param_1,1,iVar1 * 2 + 4);
+      *puVar3 = uVar2;
+      iVar4 = iVar4 + 1;
+      puVar3 = puVar3 + 1;
+    } while (iVar4 < *(int *)(param_1 + 0x96));
+  }
+  return;
+}
+
+

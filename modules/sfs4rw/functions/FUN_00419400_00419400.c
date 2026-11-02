@@ -1,0 +1,21 @@
+/* Module: sfs4rw.dll
+   Function: FUN_00419400
+   Address: 00419400
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+int __fastcall FUN_00419400(int param_1)
+
+{
+  uint uVar1;
+  ushort uVar2;
+  
+  uVar1 = *(uint *)(param_1 + 0x14);
+  uVar2 = (ushort)(uVar1 >> 0x10);
+  if ((uVar1 != 0) && ((uVar1 < 3 || (uVar1 == 7)))) {
+    return CONCAT22(uVar2,*(undefined2 *)(param_1 + 0x24));
+  }
+  return (uint)uVar2 << 0x10;
+}
+
+

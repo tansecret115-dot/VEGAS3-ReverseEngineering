@@ -1,0 +1,65 @@
+/* Module: sfmarket2.dll
+   Function: FUN_00431a50
+   Address: 00431a50
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+uint FUN_00431a50(void *param_1)
+
+{
+  int iVar1;
+  void *dwFileAttributes;
+  uint uVar2;
+  _FILETIME local_18;
+  _FILETIME local_10;
+  _FILETIME local_8;
+  
+  uVar2 = 0;
+  iVar1 = *(int *)((int)param_1 + 0x24);
+  if ((iVar1 == 2) || (iVar1 == 0)) {
+    uVar2 = FUN_00434fb0(param_1);
+  }
+  else if (iVar1 == 3) {
+    uVar2 = FUN_00439ae0(param_1);
+  }
+  else if (iVar1 == 4) {
+    uVar2 = FUN_004327e0(param_1);
+  }
+  dwFileAttributes = param_1;
+  if (*(HANDLE *)((int)param_1 + 8) != (HANDLE)0x0) {
+    GetFileTime(*(HANDLE *)((int)param_1 + 8),&local_8,&local_10,&local_18);
+    dwFileAttributes = (void *)GetFileAttributesA((LPCSTR)((int)param_1 + 0x678));
+    CloseHandle(*(HANDLE *)((int)param_1 + 8));
+    *(undefined4 *)((int)param_1 + 8) = 0;
+  }
+  iVar1 = *(int *)((int)param_1 + 0x24);
+  if ((((iVar1 == 2) || (iVar1 == 3)) || (iVar1 == 4)) ||
+     ((iVar1 == 5 && (*(int *)((int)param_1 + 0xc) != 0)))) {
+    SetFileTime(*(HANDLE *)((int)param_1 + 8),&local_8,&local_10,&local_18);
+    SetFileAttributesA((LPCSTR)((int)param_1 + 0x77c),(DWORD)dwFileAttributes);
+    CloseHandle(*(HANDLE *)((int)param_1 + 0xc));
+    *(undefined4 *)((int)param_1 + 0xc) = 0;
+  }
+  if ((-1 < (int)uVar2) &&
+     (((iVar1 = *(int *)((int)param_1 + 0x24), iVar1 == 2 || (iVar1 == 5)) || (iVar1 == 3)))) {
+    if (*(int *)((int)param_1 + 0x8a8) == 0) {
+      DeleteFileA((LPCSTR)((int)param_1 + 0x77c));
+      uVar2 = 1;
+    }
+    else {
+      DeleteFileA((LPCSTR)((int)param_1 + 0x678));
+      rename((char *)((int)param_1 + 0x77c),(LPCSTR)((int)param_1 + 0x678));
+    }
+  }
+  *(undefined4 *)((int)param_1 + 0x8a0) = 0;
+  *(undefined4 *)((int)param_1 + 0x8a4) = 0;
+  if (*(int **)((int)param_1 + 0x10) != (int *)0x0) {
+    FUN_00427800(*(int **)((int)param_1 + 0x10),0,-1,0);
+    FUN_00428a70(*(int **)((int)param_1 + 0x10));
+    *(undefined4 *)((int)param_1 + 0x10) = 0;
+  }
+  FUN_00439aa0((int)param_1);
+  return uVar2;
+}
+
+

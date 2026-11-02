@@ -1,0 +1,36 @@
+/* Module: vidcap30.exe
+   Function: FUN_00566840
+   Address: 00566840
+   Source: Ghidra pseudocode (Stage 10 batch) */
+
+
+int * FUN_00566840(int param_1)
+
+{
+  byte *pbVar1;
+  int *piVar2;
+  int iVar3;
+  int unaff_EBX;
+  int *piVar4;
+  int *piVar5;
+  undefined1 *puVar6;
+  
+  piVar2 = (int *)(*(code *)**(undefined4 **)(param_1 + 4))(param_1,1,0x400);
+  puVar6 = &DAT_005a0f60;
+  piVar4 = piVar2;
+  do {
+    iVar3 = 0;
+    piVar5 = piVar4;
+    do {
+      piVar4 = piVar5 + 1;
+      pbVar1 = puVar6 + iVar3;
+      iVar3 = iVar3 + 1;
+      *piVar5 = (int)((uint)*pbVar1 * -0x1fe + 0xfe01) / (unaff_EBX * 0x200 + -0x200);
+      piVar5 = piVar4;
+    } while (iVar3 < 0x10);
+    puVar6 = puVar6 + 0x10;
+  } while ((int)puVar6 < 0x5a1060);
+  return piVar2;
+}
+
+
